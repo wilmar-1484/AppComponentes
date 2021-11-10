@@ -1,7 +1,7 @@
 <app-header titulo="servicios"></app-header>
 
 <ion-content>
-  <ion-button routerLink= '/inicio'>inicio</ion-button>
-  <ion-button routerLink= '/registro'>registro</ion-button>
-
+  <ion-button (click)="presentActionSheet()" expand="block" fill="clear" shape="round">
+    Desplegar Servicios
+  </ion-button>
 </ion-content>

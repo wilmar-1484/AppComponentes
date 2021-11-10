@@ -1,6 +1,13 @@
 <app-header titulo="registro"></app-header>
 
 <ion-content>
-  <ion-button routerLink= '/inicio'>inicio</ion-button>
-  <ion-button routerLink= '/servicios'>servicios</ion-button>
+  <ion-button (click)="presentAlert()" expand="block" fill="clear" shape="round">
+    registrarse
+  </ion-button>
+  <ion-button (click)="presentAlertMultipleButtons()" expand="block" fill="clear" shape="round">
+    registrarse2
+  </ion-button>
+  <ion-button (click)="presentAlertPrompt()" expand="block" fill="clear" shape="round">
+    registrarse3
+  </ion-button>
 </ion-content>
