@@ -15,12 +15,11 @@ export class ServiciosPage implements OnInit {
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
-      backdropDismiss: false,
+      header: 'Servicios',backdropDismiss:false,
       buttons: [{
         text: 'Delete',
         role: 'destructive',
-        icon: 'trash',
+       icon: 'trash',
         cssClass: 'colorRojo',
         handler: () => {
           console.log('Delete clicked');

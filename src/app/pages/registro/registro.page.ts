@@ -16,7 +16,7 @@ export class RegistroPage implements OnInit {
 async presentAlert() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Alert',
+      header: 'registro1',
       subHeader: 'Subtitle',
       message: 'This is an alert message.',
       buttons: ['OK']
@@ -28,10 +28,15 @@ async presentAlert() {
   async presentAlertMultipleButtons() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Alert',
+      header: 'registro2',
       subHeader: 'Subtitle',
       message: 'This is an alert message.',
-      buttons: ['Cancel', 'Open Modal', 'Delete']
+      buttons: [{text:'Cancel'}, {text:'abrir'},
+       {text:'Delete',
+       cssClass: 'colorRojo',
+       handler: () => {
+         console.log('Delete clicked');
+       }  }]
     });
 
     await alert.present();
@@ -40,32 +45,25 @@ async presentAlert() {
 async presentAlertPrompt() {
   const alert = await this.alertController.create({
     cssClass: 'my-custom-class',
-    header: 'Prompt!',
+    header: 'Registro3',
     inputs: [
       {
         name: 'name1',
         type: 'text',
-        placeholder: 'Placeholder 1'
+        placeholder: 'nombre'
       },
       {
         name: 'name2',
         type: 'text',
         id: 'name2-id',
-        value: 'hello',
-        placeholder: 'Placeholder 2'
-      },
-      // multiline input.
-      {
-        name: 'paragraph',
-        id: 'paragraph',
-        type: 'textarea',
-        placeholder: 'Placeholder 3'
+        value: '',
+        placeholder: 'apellido'
       },
       {
         name: 'name3',
         value: 'http://ionicframework.com',
         type: 'url',
-        placeholder: 'Favorite site ever'
+        placeholder: 'url'
       },
       // input date with min & max
       {
@@ -110,8 +108,8 @@ async presentAlertPrompt() {
         }
       }, {
         text: 'Ok',
-        handler: () => {
-          console.log('Confirm Ok');
+        handler: (data: any) => {
+          console.log(data);
         }
       }
     ]

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+const newLocal = 'noticias';
 const routes: Routes = [
   {
     path: '',
@@ -18,10 +19,6 @@ const routes: Routes = [
   {
     path: 'servicios',
     loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosPageModule)
-  },
-  {
-    path: 'noticias',
-    loadChildren: () => import('./pages/noticias/noticias.module').then( m => m.NoticiasPageModule)
   },
 ];
 

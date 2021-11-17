@@ -25,8 +25,7 @@ export class InicioPage implements OnInit {
       name: 'servicios',
       redirectTo: '/servicios'
     }
-
-  ];
+    ];
 
   constructor() { }
 
